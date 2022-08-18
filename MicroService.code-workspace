@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "front-end"
+		},
+		{
+			"path": "broker-Service"
+		},
+		{
+			"name": "micro_Services",
+			"path": "."
+		}
+	]
+}
