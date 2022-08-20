@@ -12,5 +12,8 @@
 			"name": "project",
 			"path": "project"
 		}
-	]
+	],
+	"settings": {
+		"makefile.extensionOutputFolder": "./.vscode"
+	}
 }
