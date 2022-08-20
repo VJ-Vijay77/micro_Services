@@ -9,6 +9,7 @@ import (
 
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, _ *http.Request) {
+		// rendering html page test.gohtml
 		render(w, "test.page.gohtml")
 	})
 
@@ -21,16 +22,18 @@ func main() {
 
 func render(w http.ResponseWriter, t string) {
 
+	//creating slice of templates in templates folder
 	partials := []string{
 		"./cmd/web/templates/base.layout.gohtml",
 		"./cmd/web/templates/header.partial.gohtml",
 		"./cmd/web/templates/footer.partial.gohtml",
 	}
 
+	//appending the recieved string of html page name to templateSlice
 	var templateSlice []string
 	templateSlice = append(templateSlice, fmt.Sprintf("./cmd/web/templates/%s", t))
 
-	
+	//appending recieved page with partials 
 		templateSlice = append(templateSlice, partials...)
 	
 

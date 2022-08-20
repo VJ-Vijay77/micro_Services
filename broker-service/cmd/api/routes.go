@@ -8,7 +8,7 @@ import (
 	"github.com/go-chi/cors"
 )
 
-//setting a reciever from main file struct
+// setting a reciever from main file struct i.e app * config
 func(app *Config) routes() http.Handler {
 	mux := chi.NewRouter()
 
