@@ -19,4 +19,6 @@ RUN mkdir /app
 
 COPY --from=builder /app/brokerApp /app
 
+RUN apk add libcap && setcap 'cap_net_bind_service=+ep' /app/brokerApp
+
 CMD [ "/app/brokerApp" ]
