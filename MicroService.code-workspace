@@ -11,6 +11,9 @@
 		{
 			"name": "project",
 			"path": "project"
+		},
+		{
+			"path": "authentication-service"
 		}
 	],
 	"settings": {
