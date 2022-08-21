@@ -9,11 +9,12 @@
 			"path": "broker-service"
 		},
 		{
-			"name": "project",
-			"path": "project"
+			"name": "authentication-service",
+			"path": "authentication-service"
 		},
 		{
-			"path": "authentication-service"
+			"name": "project",
+			"path": "project"
 		}
 	],
 	"settings": {

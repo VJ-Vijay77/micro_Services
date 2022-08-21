@@ -50,11 +50,13 @@ func main() {
 
 
 func OpenDB (dsn string) (*sql.DB,error) {
+	//? phx is the driver that we imported for postgres database
+	//? dsn is the database address 
 	db,err := sql.Open("pgx",dsn)
 	if err != nil {
 		return nil,err
 	}
-
+	//? ping is just testing the database whether it is alive or not
 	err = db.Ping()
 	if err != nil {
 		return nil,err
@@ -63,8 +65,14 @@ func OpenDB (dsn string) (*sql.DB,error) {
 }
 
 func ConnectToDB() *sql.DB {
+	//? declared in the authentication-service in docker compose
 	dsn := os.Getenv("DSN")
+	if dsn == "" {
+		log.Panic("Couldnt fetch environment variables ...")
+		return nil
+	}
 
+	//!connecting to database as long as it is ready to accept connections
 	for {
 		connection,err := OpenDB(dsn)
 		if err != nil {
@@ -79,8 +87,8 @@ func ConnectToDB() *sql.DB {
 			log.Println(err)
 			return nil
 		}
-		log.Println("Backing off for two seconds ...")
-		time.Sleep(2 * time.Second)
+		log.Println("Backing off for 4 seconds ...")
+		time.Sleep(4 * time.Second)
 		continue
 	}
 }
