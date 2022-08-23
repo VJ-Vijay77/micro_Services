@@ -22,7 +22,7 @@ func (app *Config) Broker(w http.ResponseWriter, r *http.Request) {
 
 	payload := jsonResponse{
 		Error:   false,
-		Message: "Hit the brokers soon..",
+		Message: "Hit on Broker Service ",
 	}
 
 	_ = app.writeJSON(w, http.StatusOK, payload)
@@ -36,7 +36,7 @@ func(app *Config) HandleSubmission(w http.ResponseWriter,r *http.Request) {
 
 	err := app.readJSON(w,r,&requestPayload)
 	if err != nil {
-		app.errorJSON(w,err)
+		app.errorJSON(w,errors.New("error in read json"))
 		return
 	}
 

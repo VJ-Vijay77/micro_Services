@@ -11,7 +11,7 @@ up:
 
 ## up_build: stops docker compose (if running),
 ## builds all projects and starts docker compose
-up_build: build_broker build_auth build_front start
+up_build: build_broker build_auth 
 	@echo "Stopping docker images (if running...)"
 	docker compose down
 	@echo "Building (when required) and starting docker images..."
@@ -22,6 +22,9 @@ up_build: build_broker build_auth build_front start
 ## down: stop docker compose
 down:
 	@echo "Stopping docker compose..."
+## cd ../front-end &&  rm frontApp
+## cd ../broker-service && rm brokerApp
+## cd ../authentication-service && rm authApp
 	docker compose down
 	@echo "Done!"
 
