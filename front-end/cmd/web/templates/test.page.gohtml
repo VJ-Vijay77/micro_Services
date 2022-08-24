@@ -41,7 +41,9 @@
 
 
         //auth button listener
-        authBrokerBtn.addEventListener("click",function() {
+        authBrokerBtn.addEventListener("click", function () {
+            // started();
+
             const payload = {
                 action: "auth",
                 auth: {
@@ -51,7 +53,7 @@
             }
 
             const headers = new Headers();
-            headers.append("Content-Type","application/json");
+            headers.append("Content-Type", "application/json");
 
             const body = {
                 method: 'POST',
@@ -59,24 +61,22 @@
                 headers: headers,
             }
 
-
-            fetch("http:\/\/localhost:8080/handle",body)
-            .then((response) => response.json())
-            .then((data) => {
-                sent.innerHTML = JSON.stringify(payload,undefined,4);
-                received.innerHTML = JSON.stringify(data, undefined, 4);
-                if (data.error) {
-                    output.innerHTML += `<br><strong>Error:</strong>:` + data.message;
-                } else {
-                    output.innerHTML += `<br><strong>Response from broker service</strong> : `+ data.message;
-                }
-
-            })
-
-            .catch((error) => {
-                output.innerHTML += "<br><br>Eror; " + error;
-            })
-            
+            fetch("http:\/\/localhost:8080/handle", body)
+                .then(response => response.json())
+                .then((data) => {
+                    sent.innerHTML = JSON.stringify(payload, undefined, 4);
+                    received.innerHTML = JSON.stringify(data, undefined, 4);
+                    if (data.error) {
+                        output.innerHTML += `<br><strong>Error:</strong> ${data.message}`;
+                    } else {
+                        output.innerHTML += `<br><strong>Response from auth service:</strong> ${data.message}`;
+                        output.innerHTML += `<br>Authenticated user ${data.data.first_name}`;
+                    }
+                    // ended();
+                })
+                .catch(error => {
+                    output.innerHTML += "<br><br><strong>Error: " + error;
+                })
         })
 
 

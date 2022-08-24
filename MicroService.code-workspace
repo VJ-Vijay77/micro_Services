@@ -13,6 +13,10 @@
 			"path": "authentication-service"
 		},
 		{
+			"name": "logger-service",
+			"path": "logger-service"
+		},
+		{
 			"name": "project",
 			"path": "project"
 		}

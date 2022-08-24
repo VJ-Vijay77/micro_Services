@@ -41,9 +41,12 @@ func main() {
 		Handler: app.routes(),
 	}
 
+	log.Printf("Starting authentication end service on port %s\n", webPort)
 	err := srv.ListenAndServe()
 	if err != nil {
 		log.Panic(err)
+	}else{
+		log.Println("Port 8082 started!")
 	}
 
 }
