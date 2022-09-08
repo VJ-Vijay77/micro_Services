@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/vj/go_projects/src/micro_Services/front-end'
+make: Leaving directory '/home/vj/go_projects/src/micro_Services/front-end'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+
