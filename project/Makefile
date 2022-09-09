@@ -59,7 +59,7 @@ start: build_front
 	@echo "Starting front end"
 	cd ../front-end && ./${FRONT_END_BINARY} &
 
-## stop: stop the front end
+
 stop:
 	@echo "Stopping front end..."
 	@-pkill -SIGTERM -f "./${FRONT_END_BINARY}"
