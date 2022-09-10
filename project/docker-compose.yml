@@ -24,9 +24,15 @@ services:
         mode: replicated
         replicas: 1
       environment:
-        DSN: "host=postgres port=5432 user=postgres password=password dbname=users sslmode=disable timezone=UTC connect_timeout=5"
+        DSN: "host=postgres port=5432 user=vijay password=12345 dbname=users sslmode=disable timezone=UTC connect_timeout=15"
         # DSN: "postgresql://postgres:password@postgres:5432/users?sslmode=disable"
-    
+      links:
+        - "postgres:postgres"
+      depends_on:
+        - postgres
+      networks:
+        - connection
+
     logger-service:
         build:
             context: ./../logger-service
@@ -46,12 +52,14 @@ services:
           mode: replicated
           replicas: 1
         environment:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: password
+          POSTGRES_USER: vijay
+          POSTGRES_PASSWORD: 12345
           POSTGRES_DB: users
         volumes:
             - ./db-data/postgres/:/var/lib/postgresql
-
+        networks:
+          - connection    
+        
     mongo:
       image: 'mongo:4.2.16-bionic'
       ports:
@@ -60,5 +68,10 @@ services:
         MONGO_INITDB_DATABASE: logs
         MONGO_INITDB_ROOT_USERNAME: admin
         MONGO_INITDB_ROOT_PASSWORD: password
-      volumes:
-        - ./db-data/mongo/:/data/db
+      # volumes:
+        # - ./db-data/mongo/:/data/db
+
+
+networks:
+  connection:
+    driver: bridge
