@@ -25,7 +25,7 @@ services:
         replicas: 1
       environment:
         # DSN: "host=postgres port=5432 user=vijay password=12345 dbname=users sslmode=disable timezone=UTC connect_timeout=15"
-        DSN: "postgresql://vijay:12345@postgres:5432/users?sslmode=disable"
+        DSN: "postgresql://vijay:12345@172.26.0.2:5432/users?sslmode=disable"
       links:
         - "postgres:postgres"
       depends_on:
