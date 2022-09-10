@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Sep  9 19:20:14 2022
+# Make data base, printed on Sat Sep 10 17:24:54 2022
 
 # Variables
 
@@ -53,7 +51,7 @@ VSCODE_CODE_CACHE_PATH = /home/vj/.config/Code/CachedData/784b0177c56c607789f963
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.AUL4R1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.OU9WR1
 # default
 .LOADED := 
 # default
@@ -87,13 +85,13 @@ MAKEFILE_LIST :=
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 3479
+VSCODE_PID = 9651
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/VjLap:@/tmp/.ICE-unix/2605,unix/VjLap:/tmp/.ICE-unix/2605
+SESSION_MANAGER = local/VjLap:@/tmp/.ICE-unix/2066,unix/VjLap:/tmp/.ICE-unix/2066
 # automatic
 *F = $(notdir $*)
 # environment
@@ -135,7 +133,7 @@ LANGUAGE = en_IN:en
 # environment
 GOBIN = /home/vj/go_projects/bin
 # environment
-INVOCATION_ID = c4c9f084ff904301a4385b14f25e91c1
+INVOCATION_ID = 56e28b4d84ca457191b0f3fd8d3af259
 # environment
 USERNAME = vj
 # environment
@@ -163,7 +161,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := 
 # environment
-SYSTEMD_EXEC_PID = 2643
+SYSTEMD_EXEC_PID = 2107
 # environment
 DISPLAY = :0
 # environment
@@ -173,15 +171,15 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 2458
+MANAGERPID = 1919
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3479
+GIO_LAUNCHED_DESKTOP_FILE_PID = 9651
 # environment
 _ = /usr/share/code/code
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
-JOURNAL_STREAM = 8:72002
+JOURNAL_STREAM = 8:38751
 # environment
 GOMODCACHE = /home/vj/go_projects/pkg/mod
 # environment
@@ -279,6 +277,8 @@ GNUmakefile:
 # strcache performance: lookups = 18 / hit rate = 16%
 # hash-table stats:
 # Load=15/8192=0%, Rehash=0, Collisions=0/18=0%
-# Finished Make data base on Fri Sep  9 19:20:14 2022
+# Finished Make data base on Sat Sep 10 17:24:54 2022
 
  
+make: *** No rule to make target 'all'.  Stop.
+
